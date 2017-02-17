@@ -2,7 +2,7 @@
 Windows-8-6.2.9200
 Ren'Py 6.99.10.1227
 21:33 17.02.2017
- 
+ 21:34 17.02.2017
 
 Bootstrap to the start of init.init took 0.12s
 Early init took 0.02s
