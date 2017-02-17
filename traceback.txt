@@ -1,0 +1,25 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/gui.rpy", line 11, in script
+    init python:
+  File "game/gui.rpy", line 12, in <module>
+    gui.init(1920, 1080)
+AttributeError: 'StoreModule' object has no attribute 'init'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/gui.rpy", line 11, in script
+    init python:
+  File "E:\1\Программы\Ren'py\renpy\ast.py", line 806, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "E:\1\Программы\Ren'py\renpy\python.py", line 1577, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/gui.rpy", line 12, in <module>
+    gui.init(1920, 1080)
+AttributeError: 'StoreModule' object has no attribute 'init'
+
+Windows-8-6.2.9200
+Ren'Py 6.99.10.1227
+ 
