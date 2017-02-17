@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 6: expected statement.
-    slow_abortable = True
-                   ^
+File "game/script.rpy", line 80: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Упасть на колени и начать умолять вахтершу, чтобы она впустила меня"
+                                                                         ^
 
-Ren'Py Version: Ren'Py 6.99.11.1749
+Ren'Py Version: Ren'Py 6.99.10.1227
