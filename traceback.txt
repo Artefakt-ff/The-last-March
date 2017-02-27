@@ -1,25 +1,85 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/gui.rpy", line 11, in script
-    init python:
-  File "game/gui.rpy", line 12, in <module>
-    gui.init(1920, 1080)
-AttributeError: 'StoreModule' object has no attribute 'init'
+  File "game/script.rpy", line 146, in script
+    menu:
+Exception: Unknown text tag u'\u041e\u0442\u0432\u0435\u0442\u0438\u0442\u044c \u0442\u0430\u043d\u0446\u0435\u043c'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/gui.rpy", line 11, in script
-    init python:
-  File "E:\1\Программы\Ren'py\renpy\ast.py", line 806, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "E:\1\Программы\Ren'py\renpy\python.py", line 1577, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/gui.rpy", line 12, in <module>
-    gui.init(1920, 1080)
-AttributeError: 'StoreModule' object has no attribute 'init'
+  File "game/script.rpy", line 146, in script
+    menu:
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\ast.py", line 1459, in execute
+    choice = renpy.exports.menu(choices, self.set)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\exports.py", line 847, in menu
+    rv = renpy.store.menu(items)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\exports.py", line 1033, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\core.py", line 2507, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\core.py", line 2860, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\core.py", line 1936, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 427, in renpy.display.render.render_screen (gen\renpy.display.render.c:6806)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\screen.py", line 623, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\layout.py", line 895, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\behavior.py", line 707, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\display\layout.py", line 1081, in render
+    st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\text\text.py", line 1735, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\text\text.py", line 553, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "E:\Games\renpy\renpy-6.99.12.3-sdk\renpy\text\text.py", line 1043, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag u'\u041e\u0442\u0432\u0435\u0442\u0438\u0442\u044c \u0442\u0430\u043d\u0446\u0435\u043c'
 
 Windows-8-6.2.9200
-Ren'Py 6.99.10.1227
- 
+Ren'Py 6.99.12.3.2123
+The last March 1.0
