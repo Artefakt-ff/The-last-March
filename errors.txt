@@ -2,12 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 147: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Съешь их на полдник..?"
-                            ^
+File "game/options.rpy", line 16: expected statement.
+    mm_root = "images/menu.jpg"
+            ^
 
-File "game/script.rpy", line 182: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Потыкать указкой"
-                      ^
+File "game/options.rpy", line 17: expected statement.
+    gm_root = "Images/uni.jpg"
+            ^
 
 Ren'Py Version: Ren'Py 6.99.12.3.2123
