@@ -304,17 +304,17 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Погнали!") action Start()
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            # textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Сохранить") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Загрузить") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Настройки") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -322,14 +322,14 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Главное меню") action MainMenu()
 
-        textbutton _("О") action ShowMenu("about")
+        textbutton _("О нас") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            # textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
             textbutton _("Выйти") action Quit(confirm=not main_menu)
@@ -549,7 +549,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("О"), scroll="viewport"):
+    use game_menu(_("О нас"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -590,14 +590,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_("Сохранение"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_("Загрузка"))
 
 
 screen file_slots(title):
@@ -722,7 +722,7 @@ screen preferences():
     else:
         $ cols = 4
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Настройки"), scroll="viewport"):
 
         vbox:
 
@@ -737,19 +737,19 @@ screen preferences():
                         textbutton _("Окно") action Preference("display", "window")
                         textbutton _("Полный экран") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                #vbox:
+                #    style_prefix "radio"
+                #    label _("Rollback Side")
+                #    textbutton _("Disable") action Preference("rollback side", "disable")
+                #    textbutton _("Left") action Preference("rollback side", "left")
+                #    textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    label _("Пропускать:")
+                    textbutton _("Текст") action Preference("skip", "toggle")
+                    textbutton _("После выбора действия") action Preference("after choices", "toggle")
+                    textbutton _("Эффекты") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -762,18 +762,18 @@ screen preferences():
 
                 vbox:
 
-                    label _("Text Speed")
+                    label _("Скорость появления текста")
 
                     bar value Preference("text speed")
 
-                    label _("Auto-Forward Time")
+                    # label _("Auto-Forward Time")
 
-                    bar value Preference("auto-forward time")
+                    # bar value Preference("auto-forward time")
 
                 vbox:
 
                     if config.has_music:
-                        label _("Music Volume")
+                        label _("Громкость музыки")
 
                         hbox:
                             bar value Preference("music volume")
@@ -790,18 +790,18 @@ screen preferences():
 
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Громкость речи")
 
                         hbox:
                             bar value Preference("voice volume")
 
                             if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                                textbutton _("Тест") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
+                        textbutton _("Выключить все"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
