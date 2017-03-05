@@ -16,6 +16,7 @@ label semaslava_branch:
         $ cond = True
     menu:
         "Попробовать пройти мимо":
+            $ brutality += 1
             mant 'Это наш туалет'
             korm 'Мы тут хозяева'
             g "Санава, санава бич... Заново жить научи..."
@@ -24,13 +25,14 @@ label semaslava_branch:
             "Делаешь свои дела под пристальными взглядами"
             hide slavasema with dissolve            
             scene bg II hall
-            jump leo
+            jump pash 
         "Попробовать убежать":
+            $ brutality -= 1
             mant "Стой, кучерявый!"
             korm "Я тебя на своей девятке прокачу!"
             hide slavasema with dissolve
             scene bg II hall
-            jump leo
+            jump pash
         "Предложить выпить" if cond:
                 g 'А не выпить ли нам за знакомство?'
                 korm 'Деловой разговор!'
@@ -43,7 +45,7 @@ label semaslava_branch:
                 show vpiska III with dissolve 
                 g "Кто я..? Где я..?"
                 g 'Какое сегодня число?'
-                "В кармане находится календарик с иконой на другой стороне"
+                "В кармане находится календарик с иконой на оборотной стороне"
                 g 'ЧЁРТ! 9...'
                 g '...апреля'
                 jump fail
