@@ -2,12 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 16: expected statement.
-    mm_root = "images/menu.jpg"
-            ^
-
-File "game/options.rpy", line 17: expected statement.
-    gm_root = "Images/uni.jpg"
-            ^
+The label fail is defined twice, at
+  File "game/fail.rpy", line 1 and
+  File "game/fail_branch.rpy", line 1.
 
 Ren'Py Version: Ren'Py 6.99.12.3.2123
